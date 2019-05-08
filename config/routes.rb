@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   resources :stocks
   resources :analysts
   resources :blogs
+  
+  # sessions
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+
 
   # get 'tradingbooks/index'
   #

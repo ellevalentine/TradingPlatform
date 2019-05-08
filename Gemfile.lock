@@ -56,8 +56,12 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.5.1.1)
       execjs
+
     bindex (0.7.0)
-    bootstrap (4.2.1)
+#     bootstrap (4.2.1)
+    bcrypt (3.1.12)
+    bootstrap (4.3.1)
+
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
@@ -248,6 +252,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.2.1)
+  bcrypt (~> 3.1.7)
+#   bootstrap
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
