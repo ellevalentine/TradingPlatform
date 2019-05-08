@@ -3,6 +3,7 @@ class TradingbooksController < ApplicationController
   end
 
   def show
+    @tradingbook = Tradingbook.find(params["id"])
   end
 
   def new

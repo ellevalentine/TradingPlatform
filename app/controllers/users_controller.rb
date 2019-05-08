@@ -21,14 +21,16 @@ class UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
-    if @user.save 
+    if @user.save
+      tb = Tradingbook.create(user: @user)
       redirect_to users_path, :notice => "User Created"
-    else 
+    else
       render "new"
-    end 
-  end 
+    end
+  end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -38,5 +40,3 @@ class UsersController < ApplicationController
   end
 
 end
-
-
