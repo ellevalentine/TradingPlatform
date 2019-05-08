@@ -35,7 +35,7 @@ gem 'json'
 gem 'require_all'
 
 gem 'simple_form'
-gem 'bootstrap', '~> 4.2.1'
+# gem 'bootstrap', '~> 4.2.1'
 
 
 

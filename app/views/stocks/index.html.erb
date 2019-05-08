@@ -10,18 +10,6 @@
 <hr>
 
 
-<%= simple_form_for :seach, url:root_path, method:"GET", html:{class: 'form-inline'} do |f| %>
-<%= f.input :company_name, input_html: {value:""}  %>
-<%= f.submit "search", class: "btn btn-primary" %>
-<% end %>
-
-
-
-
-
-
-
-
 <% @stocks.each do |s| %>
 
 <%= link_to s.company_name, stock_path(s) %> (<%= s.symbol  %>) <br>
