@@ -1,2 +1,7 @@
-<h1>Stocks#show</h1>
-<p>Find me in app/views/stocks/show.html.erb</p>
+<h1><%= @stock.company_name %> (<%= @stock.symbol %>) </h1>
+
+
+<h3> price: <%= @stock.price.to_f %></h3>
+
+
+<p><%= link_to "Back to stocks", stocks_path %></p>
