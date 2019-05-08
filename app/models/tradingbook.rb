@@ -1,4 +1,5 @@
 class Tradingbook < ApplicationRecord
-  belongs_to :stock
+  # this has to be a mtm (tradingbook <-> stocks)
+  has_one :stock
   belongs_to :user
 end

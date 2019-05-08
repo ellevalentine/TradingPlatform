@@ -41,6 +41,8 @@ stocks_hash["feed"]["entry"].each do |company|
   Stock.create(company_name: company["content"]["$t"].split(",")[0].split(":")[1], symbol: company["title"]["$t"] , price: company["content"]["$t"].split(",")[1].split(":")[1])
 end
 
+
+
  # byebug
  #
  # 0

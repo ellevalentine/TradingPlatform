@@ -1,1 +1,8 @@
-<h1>Welcome <%= @tradingbook.user.first_name%>!</h1>
+<h1>Portfolio</h1>
+<br>
+<p> name: <%= @tradingbook.user.first_name%> <%= @tradingbook.user.last_name%></p>
+<p>Stocks: </p>
+
+
+<%= link_to "Buy new stocks", stocks_path%>|
+<%= link_to "Back to home", user_path%>

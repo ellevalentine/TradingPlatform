@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20190507132311) do
     t.string "company_name"
     t.string "symbol"
     t.integer "price"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

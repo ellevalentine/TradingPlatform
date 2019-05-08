@@ -22,7 +22,8 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if @user.save
-      tb = Tradingbook.create(user: @user)
+      @tb = Tradingbook.create(user_id: @user.id)
+
       redirect_to users_path, :notice => "User Created"
     else
       render "new"
@@ -34,9 +35,24 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+       if @user.update_attributes(user_params)
+         redirect_to users_path, :notice => "User Updated"
+       else
+         render "edit"
+       end
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit!
+    end
 
 end

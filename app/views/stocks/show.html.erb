@@ -3,5 +3,22 @@
 
 <h3> price: <%= @stock.price.to_f %></h3>
 
+<%= form_for @stock do |s| %>
+
+<p>
+  <%= s.label :quantity%>
+  <%= s.number_field :quantity, :value => 0 %> <br>
+<br>
+quantity: <%= @stock.quantity = 10 %><br>
+<% stockprice= @stock.price.to_f / 100 %> <br>
+cost: <%= number_to_currency(stockprice * @stock.quantity)%> <br>
+<br>
+
+  <%= s.submit "buy" %>
+
+</p>
+
+<% end %>
+
 
 <p><%= link_to "Back to stocks", stocks_path %></p>

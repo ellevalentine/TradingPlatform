@@ -1,2 +1,10 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<h1>blogs</h1>
+
+
+<p><% Analyst.all.each do |b| %></p>
+
+<%= b.content %>
+<hr>
+<% end %>
+
+<%= link_to "Blog home", blogs_path %>
