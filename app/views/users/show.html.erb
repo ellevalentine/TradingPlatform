@@ -4,12 +4,9 @@
 
 
 <h4> <%= link_to "Portfolio", tradingbook_path(@user.tradingbooks[0]) %> </h4>
-<% @user.tradingbooks.each do |tradingbook| %>
 
 
-<% end %>
 
-<h4> <%= link_to "Manage account", edit_user_path(@user) %> </h4> 
+<h4> <%= link_to "Manage account", edit_user_path(@user) %> </h4>
 
 <h4> <%= link_to "Financial updates", blogs_path  %> </h4>
-<h4> <%= %> </h4>

@@ -1,8 +1,10 @@
 class TradingbooksController < ApplicationController
   def index
+    @tradingbooks = Tradingbook.all
   end
 
   def show
+    @tradingbooks = Tradingbook.all
     @tradingbook = Tradingbook.find(params["id"])
   end
 

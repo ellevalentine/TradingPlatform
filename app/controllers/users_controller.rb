@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @tradingbooks = Tradingbook.all
+
   end
 
   def new

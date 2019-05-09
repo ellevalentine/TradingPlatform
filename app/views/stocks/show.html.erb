@@ -7,14 +7,20 @@
 
 <p>
   <%= s.label :quantity%>
-  <%= s.number_field :quantity, :value => 0 %> <br>
-<br>
-quantity: <%= @stock.quantity = 10 %><br>
-<% stockprice= @stock.price.to_f / 100 %> <br>
-cost: <%= number_to_currency(stockprice * @stock.quantity)%> <br>
+  <%= s.number_field :quantity, :value => @stock.quantity %> <%= s.submit "calculate cost" %><br>
 <br>
 
-  <%= s.submit "buy" %>
+<% stockprice= @stock.price.to_f / 100 %> <br>
+cost: <%= number_to_currency(stockprice * @quantity)%> <br>
+<br>
+
+
+<% @p_company_name= @stock.company_name %>
+<% @p_price= stockprice%>
+<% @p_quantity= @quantity%>
+<% @p_cost= number_to_currency(stockprice * @quantity) %>
+
+
 
 </p>
 

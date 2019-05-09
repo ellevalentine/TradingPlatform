@@ -1,8 +1,51 @@
 <h1>Portfolio</h1>
 <br>
 <p> name: <%= @tradingbook.user.first_name%> <%= @tradingbook.user.last_name%></p>
-<p>Stocks: </p>
-
 
 <%= link_to "Buy new stocks", stocks_path%>|
-<%= link_to "Back to home", user_path%>
+<%= link_to "Back to home", users_path%>
+
+<p>Stocks <br><br>
+
+<br>
+
+<% @tradingbooks.each do |book| %>
+
+Company:<%= book.company_name %> <br>
+Quantity of stock: <%= book.quantity %> <br>
+Price of stock at purchase:<%= book.price %> <br>
+
+<% stockprice= book.price.to_f / 100 %>
+
+<%# <%= @cost = stockprice * book.quantity%> <br>
+<%# Purchase price: <%= number_to_currency(@cost)%> %> %>
+
+<br><br><br>
+
+
+
+<%  rand(0.45...1.18)  %>
+
+
+<%# Current share price: <%= @current = book.price * rand(0.81...1.119) %>  <br> %>
+
+<%# <%= @value = (@current * book.quantity)/100 %> <br> %>
+Current value: <%= number_to_currency(@value) %> <br>
+
+
+
+<%# Potential gain/loss: <%= @total = @cost - @value %> %>
+
+<br>
+
+
+
+<hr>
+
+
+
+<% end %>
+
+
+
+ </p>
