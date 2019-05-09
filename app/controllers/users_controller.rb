@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+
+
   end
 
   def create
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
     if @user.save
       @tb = Tradingbook.create(user_id: @user.id)
 
-      redirect_to users_path, :notice => "User Created"
+      redirect_to login_path, :notice => "User Created"
     else
       render "new"
     end
