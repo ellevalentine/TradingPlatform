@@ -7,4 +7,10 @@
 
 <% end %>
 
+<p><% Analyst.all.each do |b| %></p>
+
+<%= b.content %>
+<hr>
+<% end %>
+
 <%= link_to "User home", users_path %>

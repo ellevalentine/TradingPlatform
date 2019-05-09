@@ -6,9 +6,11 @@
 <%= form_for @stock do |s| %>
 
 <p>
-  <%= s.label :quantity%>
-  <%= s.number_field :quantity, :value => @stock.quantity %> <%= s.submit "calculate cost" %><br>
+  <%= s.label :enter_quantity%>
+  <%= s.number_field :quantity, :value => @stock.quantity %> <%= s.submit "Buy" %><br>
 <br>
+
+
 
 <% stockprice= @stock.price.to_f / 100 %> <br>
 cost: <%= number_to_currency(stockprice * @quantity)%> <br>
@@ -27,4 +29,7 @@ cost: <%= number_to_currency(stockprice * @quantity)%> <br>
 <% end %>
 
 
-<p><%= link_to "Back to stocks", stocks_path %></p>
+<p><%= link_to "Back to stocks", stocks_path %> |
+  <%= link_to "Portfolio", tradingbook_path %>
+
+</p>

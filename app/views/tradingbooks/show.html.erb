@@ -1,11 +1,29 @@
-<h1>Portfolio</h1>
-<br>
+<h1><%= @tradingbook.user.first_name%>'s Portfolio</h1>
+
 <p> name: <%= @tradingbook.user.first_name%> <%= @tradingbook.user.last_name%></p>
 
 <%= link_to "Buy new stocks", stocks_path%>|
 <%= link_to "Back to home", users_path%>
 
-<p>Stocks <br><br>
+<p>  <h2>Stocks </h2>
+
+
+<h4>Total funds Invested:</h4>
+<% array =[] %>
+<% @tradingbooks.each do |book| %>
+ <% array << book.cost %>
+
+<% end%>
+<% array %>
+
+<% sum_array = array.inject(0){|sum, x| sum + x} %>
+<%= number_to_currency(sum_array) %>
+
+<h4>Total Profit:</h4>
+
+<% @tradingbooks.each do |book| %>
+<%= @total %>
+<% end%>
 
 <br>
 
@@ -30,6 +48,7 @@ Current value: <%= number_to_currency(@valuevariable) %> <br>
 
 <% @total = @valuevariable - @costvariable  %>
 Potential gain/loss: <%= number_to_currency(@total)  %>
+
 
 <br>
 
