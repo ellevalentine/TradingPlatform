@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if @user.save
-      @tb = Tradingbook.create(user_id: @user.id)
+      @tb = Tradingbook.create(user_id: @user.id, company_name: "Flat Trade", quantity: 1, price: 0)
 
       redirect_to login_path, :notice => "User Created"
     else

@@ -17,24 +17,19 @@ Price of stock at purchase:<%= book.price %> <br>
 
 <% stockprice= book.price.to_f / 100 %>
 
-<%# <%= @cost = stockprice * book.quantity%> <br>
-<%# Purchase price: <%= number_to_currency(@cost)%> %> %>
+<% @costvariable = stockprice * book.quantity%>
+Purchase price:<%= number_to_currency(@costvariable) %>
 
 <br><br><br>
 
+<% @current = book.price * rand(0.81...1.119) %>
+ Current share price: <%= @current %>
 
+ <% @valuevariable = (@current * book.quantity)/100 %> <br>
+Current value: <%= number_to_currency(@valuevariable) %> <br>
 
-<%  rand(0.45...1.18)  %>
-
-
-<%# Current share price: <%= @current = book.price * rand(0.81...1.119) %>  <br> %>
-
-<%# <%= @value = (@current * book.quantity)/100 %> <br> %>
-Current value: <%= number_to_currency(@value) %> <br>
-
-
-
-<%# Potential gain/loss: <%= @total = @cost - @value %> %>
+<% @total = @valuevariable - @costvariable  %>
+Potential gain/loss: <%= number_to_currency(@total)  %>
 
 <br>
 

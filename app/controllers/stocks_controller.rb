@@ -26,8 +26,8 @@ class StocksController < ApplicationController
     @stock.update(quantity: params[:stock][:quantity])
 calc_quantity
     @user = User.find_by(id: session[:user_id]) || User.first
-    @tradingbook = Tradingbook.create(user: @user,  stock_id: @stock.id, company_name: @stock.company_name, quantity: @quantity, price: @stock.price)
-
+    @tradingbook = Tradingbook.create(user: @user,  stock_id: @stock.id, company_name: @stock.company_name, quantity: @quantity, price: @stock.price , cost: ((@quantity*@stock.price)/100).to_f)
+    # @User.bank_account = @User.bank_account -
     render :show
     # redirect_to tradingbook_path
   end
