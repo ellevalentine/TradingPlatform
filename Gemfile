@@ -35,7 +35,7 @@ gem 'rest-client'
 gem 'json'
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap'
+gem 'bootstrap-sass'
 
 gem 'require_all'
 
