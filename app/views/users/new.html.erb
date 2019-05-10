@@ -13,8 +13,13 @@
 
      <div>
         <%= label_tag :email %>
-        <%= text_field_tag :email %>
+        <%= email_field_tag :email %>
     </div>
+
+    <div>
+       <%= label_tag :add_funds %>
+       <%= text_field_tag :bank_account %>
+   </div>
 
      <div>
         <%= label_tag :dob %>
@@ -31,5 +36,9 @@
         <%= password_field_tag :password_confirmation %>
     </div>
 
-    <%= submit_tag 'Sign-Up' %>
+
+    <%= submit_tag 'Sign Up' %> <br> <br>
+
+    <%= link_to "Go to login page", login_path %>
+
 <%end%>

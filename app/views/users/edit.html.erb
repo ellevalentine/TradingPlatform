@@ -1,10 +1,54 @@
 <h1>Account: <%= @user.first_name %></h1>
 
 
-
-
-<h4> Bank Account</h4>
+<h4> Bank Account = <%= number_to_currency(@user.bank_account) %></h4>
 
 <h4> edit personal details </h4>
 
-<h4> delete account</h4>
+<%= form_for @user do |u| %>
+    <div>
+        <%= u.label :first_name %>
+        <%= u.text_field :first_name %>
+    </div>
+<br>
+     <div>
+        <%= u.label :last_name %>
+        <%= u.text_field :last_name %>
+    </div>
+<br>
+     <div>
+        <%= u.label :email %>
+        <%= u.email_field :email %>
+    </div>
+<br>
+    <div>
+       <%= u.label :change_funds %>
+      $ <%= u.text_field :bank_account %>
+   </div>
+<br>
+     <div>
+        <%= u.label :dob %>
+        <%= u.text_field :dob %>
+    </div>
+<br>
+     <div>
+        <%= u.label :new_password %>
+        <%= u.password_field :password %>
+    </div>
+<br>
+    <div>
+        <%= u.label :new_password_confirmation %>
+        <%= u.password_field :password_confirmation %>
+    </div>
+<br>
+    <%= submit_tag 'update account' %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= link_to "Delete account", user_path(@user), :method => :delete, data: { confirm: 'Are you sure?'} %> |
+
+
+<%= link_to "Back to home", user_path%>

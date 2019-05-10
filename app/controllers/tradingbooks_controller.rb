@@ -1,9 +1,13 @@
 class TradingbooksController < ApplicationController
   def index
+    @tradingbooks = Tradingbook.all
   end
 
   def show
+    # byebug
     @tradingbook = Tradingbook.find(params["id"])
+    @tradingbooks = Tradingbook.where(user_id: @tradingbook.user.id)
+    # @tradingbook = Tradingbook.find(params["id"])
   end
 
   def new

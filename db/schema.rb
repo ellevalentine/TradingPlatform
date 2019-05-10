@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20190507132311) do
     t.string "company_name"
     t.string "symbol"
     t.integer "price"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,6 +38,10 @@ ActiveRecord::Schema.define(version: 20190507132311) do
     t.string "user_id"
     t.string "stock_id"
     t.integer "profit_loss"
+    t.string "company_name"
+    t.integer "quantity"
+    t.integer "price"
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

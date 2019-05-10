@@ -1,1 +1,66 @@
-<h1>Welcome <%= @tradingbook.user.first_name%>!</h1>
+<h1><%= @tradingbook.user.first_name%>'s Portfolio</h1>
+
+<p> name: <%= @tradingbook.user.first_name%> <%= @tradingbook.user.last_name%></p>
+
+<%= link_to "Buy new stocks", stocks_path%>|
+<%= link_to "Back to home", users_path%>
+
+<p>  <h2>Stocks </h2>
+
+
+<h4>Total funds Invested:</h4>
+<% array =[] %>
+<% @tradingbooks.each do |book| %>
+ <% array << book.cost %>
+
+<% end%>
+<% array %>
+
+
+
+
+
+<h4>Total Profit:</h4>
+
+<% @tradingbooks.each do |book| %>
+<%= @total %>
+<% end%>
+
+<br>
+
+<% @tradingbooks.each do |book| %>
+
+Company:<%= book.company_name %> <br>
+Quantity of stock: <%= book.quantity %> <br>
+Price of stock at purchase:<%= book.price %> <br>
+
+<% stockprice= book.price.to_f / 100 %>
+
+<% @costvariable = stockprice * book.quantity%>
+Purchase price:<%= number_to_currency(@costvariable) %>
+
+<br><br><br>
+
+<% @current = book.price * rand(0.81...1.119) %>
+ Current share price: <%= @current %>
+
+ <% @valuevariable = (@current * book.quantity)/100 %> <br>
+Current value: <%= number_to_currency(@valuevariable) %> <br>
+
+<% @total = @valuevariable - @costvariable  %>
+Potential gain/loss: <%= number_to_currency(@total)  %>
+
+
+<br>
+
+
+
+<hr>
+
+
+
+<% end %>
+
+
+
+ </p>
