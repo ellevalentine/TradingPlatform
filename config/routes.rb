@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
 
+  root 'sessions#new'
+
+
 
   # get 'tradingbooks/index'
   #
